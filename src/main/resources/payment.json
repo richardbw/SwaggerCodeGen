@@ -1,0 +1,99 @@
+{
+    "swagger": "2.0",
+    "basePath": "/paymentsvc/dev",
+    "info": {
+        "description": "This is the payement Service API which gets all the information related to Account.",
+        "version": "1.0 Development",
+        "title": "Payments Service"
+    },
+    "host": "localhost",
+    "paths": {
+        "/payment/getPaymentDetails": {
+            "get": {
+                "description": "Gets `Payments` details.",
+                "parameters": [
+                    {
+                        "name": "accountnumber",
+                        "in": "query",
+                        "description": "please provide the account number",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "GetPaymentsResponse",
+                            "type": "array",
+                            "items": {
+                                "title": "PaymentsResponse",
+                                "type": "object",
+                                "properties": {
+                                    "amount": {
+                                        "type": "number"
+                                    },
+                                    "nxtpymntmethod": {
+                                        "type": "string"
+                                    },
+                                    "valuedate": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "nxtpymntamount": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Account number {accountnumber} not found"
+                    }
+                }
+            }
+        },
+        "/payment/Paymnttocustomer": {
+            "post": {
+                "description": "Post pays for the current customer account",
+                "parameters": [
+                    {
+                        "name": "accountnumber",
+                        "in": "query",
+                        "description": "please provide the account number",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "GetMorePrevPaysResponses",
+                            "type": "array",
+                            "items": {
+                                "title": "MorePrevPaysResponse",
+                                "type": "object",
+                                "properties": {
+                                    "lastpaymntdate": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "lastpymntamount": {
+                                        "type": "number"
+                                    },
+                                    "lastpymntmethod": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Account number {accountnumber} not found"
+                    }
+                }
+            }
+        }
+    }
+}

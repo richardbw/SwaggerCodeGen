@@ -1,6 +1,6 @@
 # SwaggerCodeGen
 
-Generate Java server code from OpenBanking swagger file
+Generate Java server code from OpenBanking swagger file.
 
 
 Get the latest *opendata-swagger.json* swagger file from: https://github.com/OpenBankingUK/opendata-api-spec-compiled/blob/master/opendata-swagger.json

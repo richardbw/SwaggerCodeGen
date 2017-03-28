@@ -5,4 +5,4 @@
  |___/\_/\_/\__,_\__, \__, \___|_|/___\__/\__,_|\_/\__,_|
                  |___/|___/
 
-| ${application.title} | ${application.version} | Spring: ${spring-boot.version} A                 
+| ${application.name} | ${application.version} | Spring: ${spring-boot.version} |

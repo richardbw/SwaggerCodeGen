@@ -1,16 +1,17 @@
 package com.accn;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 public class SwaggerCodeGenApplication {
 
+	private static final Logger log = LoggerFactory.getLogger(SwaggerCodeGenApplication.class);
+
 	public static void main(String[] args) {
+		log.info("Startin' up...........................................");
 		SpringApplication.run(SwaggerCodeGenApplication.class, args);
 	}
 }
